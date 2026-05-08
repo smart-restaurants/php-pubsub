@@ -1,22 +1,32 @@
 {
-  "name": "chocofamilyme/pubsub",
-  "description": "Библиотека для реализаций паттерна Pub/Sub",
+  "name": "smart-restaurants/php-pubsub",
+  "description": "Библиотека для реализаций паттерна Pub/Sub (форк chocofamilyme/pubsub с поддержкой heartbeat и расширенных параметров AMQP-подключения).",
   "keywords": [
     "pubsub",
     "phalcon",
     "events",
     "microservice",
-    "eventsource"
+    "eventsource",
+    "rabbitmq",
+    "amqp"
   ],
   "type": "library",
   "license": [
     "BSD-3-Clause"
   ],
-  "homepage": "https://github.com/chocofamilyme/pubsub",
+  "homepage": "https://github.com/smart-restaurants/php-pubsub",
+  "support": {
+    "issues": "https://github.com/smart-restaurants/php-pubsub/issues",
+    "source": "https://github.com/smart-restaurants/php-pubsub"
+  },
   "authors": [
     {
       "name": "IT Chocolife.me",
       "homepage": "https://chocolife.me/"
+    },
+    {
+      "name": "Smart Restaurants",
+      "homepage": "https://github.com/smart-restaurants"
     }
   ],
   "require": {
@@ -27,6 +37,9 @@
   },
   "require-dev": {
     "codeception/codeception": "*"
+  },
+  "replace": {
+    "chocofamilyme/pubsub": "self.version"
   },
   "autoload": {
     "psr-4": {

@@ -38,6 +38,13 @@ composer require chocofamilyme/pubsub
             'port'     => env('EVENTSOURCE_PORT', '5672'),
             'user'     => env('EVENTSOURCE_USER', 'guest'),
             'password' => env('EVENTSOURCE_PASSWORD', 'guest'),
+
+            // Опциональные параметры подключения (since 2.3.0)
+            'vhost'              => '/',
+            'heartbeat'          => 60,    // секунды; 0 = отключён (default)
+            'read_write_timeout' => 130,   // должен быть >= 2 * heartbeat
+            'connection_timeout' => 3,
+            'keepalive'          => true,  // включает SO_KEEPALIVE на сокете
         ],
     ],
 ]

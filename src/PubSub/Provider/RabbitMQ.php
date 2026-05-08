@@ -74,7 +74,17 @@ class RabbitMQ extends AbstractProvider
                 $this->config['host'],
                 $this->config['port'],
                 $this->config['user'],
-                $this->config['password']
+                $this->config['password'],
+                $this->config['vhost']               ?? '/',
+                false,
+                'AMQPLAIN',
+                null,
+                'en_US',
+                (float) ($this->config['connection_timeout'] ?? 3.0),
+                (float) ($this->config['read_write_timeout'] ?? 3.0),
+                null,
+                (bool)  ($this->config['keepalive']          ?? false),
+                (int)   ($this->config['heartbeat']          ?? 0)
             );
         } catch (\Exception $e) {
             throw new ConnectionException($e->getMessage(), $e->getCode(), $e);
